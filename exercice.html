@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       /* var T = prompt("veuillez ecrire la temperature"); 
+        (T>37)? alert("accès au cheking approfondi"): alert("bonne santé");
+
+        suit = prompt("inserez la temperature");
+            if (suit<0){
+                alert(" Glace");
+            }
+            else{
+                if (suit < 100){
+                alert("Liquide") 
+                }
+                else{
+                    alert("vapeur")
+                }
+            }*/
+        var n=prompt('entrer N')
+        var nbp=0
+        if (n>0){
+            for (let i=1; i<n;i++){
+                if (n%i==0){
+                    nbp=nbp+i
+                }
+                
+            }
+            if (nbp==n){
+                alert('le nombre '+ n + ' est positif et parfait')
+            }
+            else{
+                alert("le nombre "+ n +" n'est pas parfait")
+            }
+        }
+        else{
+            alert("le nombre n'est pas possitif")
+        }
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

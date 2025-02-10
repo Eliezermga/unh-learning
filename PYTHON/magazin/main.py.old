@@ -1,0 +1,250 @@
+# main.py
+
+# Étape 2 : Création de la structure de base
+def menu_principal():
+    """
+    Affiche le menu principal et retourne le choix de l'utilisateur.
+    """
+    print("1. Gestion des produits")
+    print("2. Gestion des ventes")
+    print("3. Rapport de ventes")
+    print("4. Quitter")
+    choix = input("Choisissez une option: ")
+    return choix
+
+# Liste pour stocker les produits
+produits = []
+
+# Liste pour stocker les ventes
+ventes = []
+
+# Étape 3 : Gestion des produits
+def ajouter_produit():
+    """
+    Ajoute un produit (nom, prix, quantité) à la liste des produits.
+    """
+    nom = input("Nom du produit: ")
+    prix = float(input("Prix du produit: "))
+    quantite = int(input("Quantité du produit: "))
+    produits.append({"nom": nom, "prix": prix, "quantite": quantite})
+    print(f"Produit {nom} ajouté avec succès.")
+
+def afficher_produits():
+    """
+    Affiche tous les produits.
+    """
+    for produit in produits:
+        print(f"Nom: {produit['nom']}, Prix: {produit['prix']}, Quantité: {produit['quantite']}")
+
+def rechercher_produit():
+    """
+    Recherche un produit par son nom.
+    """
+    nom = input("Nom du produit à rechercher: ")
+    for produit in produits:
+        if produit['nom'] == nom:
+            print(f"Nom: {produit['nom']}, Prix: {produit['prix']}, Quantité: {produit['quantite']}")
+            return
+    print("Produit non trouvé.")
+
+def gestion_produits():
+    """
+    Menu pour la gestion des produits.
+    """
+    while True:
+        print("1. Ajouter un produit")
+        print("2. Afficher les produits")
+        print("3. Rechercher un produit")
+        print("4. Retour au menu principal")
+        choix = input("Choisissez une option: ")
+        if choix == '1':
+            ajouter_produit()
+        elif choix == '2':
+            afficher_produits()
+        elif choix == '3':
+            rechercher_produit()
+        elif choix == '4':
+            break
+        else:
+            print("Choix invalide, veuillez réessayer.")
+
+# Étape 4 : Gestion des ventes
+def enregistrer_vente():
+    """
+    Enregistre une vente (client, produit, quantité, date).
+    """
+    client = input("Nom du client: ")
+    produit = input("Nom du produit vendu: ")
+    quantite = int(input("Quantité vendue: "))
+    date = input("Date de la vente: ")
+    if verifier_stock(produit, quantite):
+        ventes.append({"client": client, "produit": produit, "quantite": quantite, "date": date})
+        print(f"Vente à {client} enregistrée avec succès.")
+        mettre_a_jour_stock(produit, quantite)
+    else:
+        print(f"Quantité insuffisante pour {produit}.")
+
+def afficher_ventes():
+    """
+    Affiche toutes les ventes.
+    """
+    for vente in ventes:
+        print(f"Client: {vente['client']}, Produit: {vente['produit']}, Quantité: {vente['quantite']}, Date: {vente['date']}")
+
+def ventes_par_client():
+    """
+    Affiche les ventes d'un client spécifique.
+    """
+    client = input("Nom du client: ")
+    for vente in ventes:
+        if vente['client'] == client:
+            print(f"Client: {vente['client']}, Produit: {vente['produit']}, Quantité: {vente['quantite']}, Date: {vente['date']}")
+    print("Aucune vente trouvée pour ce client.")
+
+def gestion_ventes():
+    """
+    Menu pour la gestion des ventes.
+    """
+    while True:
+        print("1. Enregistrer une vente")
+        print("2. Afficher les ventes")
+        print("3. Ventes par client")
+        print("4. Retour au menu principal")
+        choix = input("Choisissez une option: ")
+        if choix == '1':
+            enregistrer_vente()
+        elif choix == '2':
+            afficher_ventes()
+        elif choix == '3':
+            ventes_par_client()
+        elif choix == '4':
+            break
+        else:
+            print("Choix invalide, veuillez réessayer.")
+
+# Étape 5 : Chargement des données
+import json
+
+def charger_donnees():
+    """
+    Charge les produits, clients et ventes depuis un fichier.
+    """
+    global produits, ventes
+    try:
+        with open('donnees.json', 'r') as f:
+            data = json.load(f)
+            produits = data['produits']
+            ventes = data['ventes']
+            print("Données chargées avec succès.")
+    except FileNotFoundError:
+        print("Fichier de données non trouvé, démarrage avec des listes vides.")
+
+# Étape 7 : Gestion de l'inventaire
+def mettre_a_jour_stock(nom_produit, quantite_vendue):
+    """
+    Met à jour la quantité de produits après une vente.
+    """
+    for produit in produits:
+        if produit['nom'] == nom_produit:
+            produit['quantite'] -= quantite_vendue
+            print(f"Stock mis à jour pour {nom_produit}: nouvelle quantité = {produit['quantite']}")
+            return
+    print("Produit non trouvé pour mise à jour du stock.")
+
+def verifier_stock(nom_produit, quantite):
+    """
+    Vérifie si la quantité de produit est suffisante avant d'enregistrer une vente.
+    """
+    for produit in produits:
+        if produit['nom'] == nom_produit:
+            return produit['quantite'] >= quantite
+    return False
+
+# Étape 8 : Rapport de ventes
+def generer_rapport_ventes():
+    """
+    Génère un rapport des ventes sur une période donnée (jour, mois, année).
+    """
+    periode = input("Choisissez la période pour le rapport (jour/mois/année): ")
+    if periode == "jour":
+        date = input("Entrez la date (JJ/MM/AAAA): ")
+        ventes_filtrees = [vente for vente in ventes if vente['date'] == date]
+    elif periode == "mois":
+        mois = input("Entrez le mois (MM/AAAA): ")
+        ventes_filtrees = [vente for vente in ventes if vente['date'][3:] == mois]
+    elif periode == "année":
+        annee = input("Entrez l'année (AAAA): ")
+        ventes_filtrees = [vente for vente in ventes if vente['date'][-4:] == annee]
+    else:
+        print("Période invalide.")
+        return
+
+    print(f"Rapport des ventes pour la période {periode}:")
+    for vente in ventes_filtrees:
+        print(f"Client: {vente['client']}, Produit: {vente['produit']}, Quantité: {vente['quantite']}, Date: {vente['date']}")
+
+def afficher_rapport_ventes():
+    """
+    Affiche le rapport des ventes.
+    """
+    generer_rapport_ventes()
+
+def generer_rapport_produit():
+    """
+    Génère un rapport de tous les produits en stock.
+    """
+    print("Rapport des produits en stock:")
+    for produit in produits:
+        print(f"Nom: {produit['nom']}, Quantité: {produit['quantite']}")
+
+def afficher_rapport_produit():
+    """
+    Affiche le rapport des produits en stock.
+    """
+    generer_rapport_produit()
+
+# Étape 9 : Interface utilisateur
+def interface_ajout_produit():
+    """
+    Interface utilisateur pour l'ajout de produit.
+    """
+    ajouter_produit()
+
+def interface_enregistrement_vente():
+    """
+    Interface utilisateur pour l'enregistrement de vente.
+    """
+    enregistrer_vente()
+
+def interface_affichage_produits():
+    """
+    Interface utilisateur d'affichage des produits.
+    """
+    afficher_produits()
+
+def interface_affichage_ventes():
+    """
+    Interface utilisateur d'affichage des ventes.
+    """
+    afficher_ventes()
+
+# Fonction principale pour lancer l'application
+def main():
+    # Charger les données au démarrage
+    charger_donnees()
+    
+    while True:
+        choix = menu_principal()
+        if choix == '1':
+            gestion_produits()
+        elif choix == '2':
+            gestion_ventes()
+        elif choix == '3':
+            afficher_rapport_ventes()
+        elif choix == '4':
+            break
+        else:
+            print("Choix invalide, veuillez réessayer.")
+
+if __name__ == "__main__":
+    main()

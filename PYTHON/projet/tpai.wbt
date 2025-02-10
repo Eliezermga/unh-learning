@@ -1,0 +1,305 @@
+#VRML_SIM R2023b utf8
+
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackground.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/floors/protos/RectangleArena.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/computers/protos/Monitor.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/computers/protos/Keyboard.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/tables/protos/Desk.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/computers/protos/DesktopComputer.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/chairs/protos/OfficeChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/chairs/protos/Chair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/tables/protos/Table.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/chairs/protos/SimpleChair.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/plants/protos/BunchOfSunFlowers.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/living_room_furniture/protos/Carpet.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/bedroom/protos/PhotoFrame.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/panels/protos/Panel.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/BrushedAluminium.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/VarnishedPine.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/street_furniture/protos/DrinkingFountain.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/appearances/protos/Parquetry.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/apartment_structure/protos/Door.proto"
+
+WorldInfo {
+  info [
+    "Pioneer 3DX with its gripper (Adept Mobile Robots)"
+    "This two-wheel, two-motor differential drive robot has in addition a rear caster wheel"
+    "It is programmed to perform a simple obstacle avoidance behavior based on the values sensed by its 16 sonars"
+  ]
+  basicTimeStep 16
+}
+Viewpoint {
+  fieldOfView 0.660595
+  orientation -0.5780382907880329 0.4726209651344431 0.6652076049612159 2.145312435988794
+  position 1.3421252452789796 -4.613644152090622 20.951692230434425
+  followType "Mounted Shot"
+}
+TexturedBackground {
+}
+TexturedBackgroundLight {
+}
+RectangleArena {
+  rotation 0 1 0 0
+  floorSize 10 10.4
+  floorTileSize 22 21
+  floorAppearance Parquetry {
+    type "chequered"
+    IBLStrength 13
+  }
+  wallHeight 6.3
+  wallAppearance BrushedAluminium {
+    IBLStrength 33
+  }
+}
+Door {
+  hidden translation_5 0.0010710393950205677 2.227810190169599e-05 2.220446049250313e-16
+  hidden rotation_5 0 0 -1 0.00014955311379007144
+  translation 4.8 -0.6 0
+  size 0.1 -1 2.3
+  position -0.06839379051081267
+  castShadows FALSE
+}
+Door {
+  hidden translation_5 0.12002575845704061 0.021918046405967284 3.4416913763379853e-15
+  hidden rotation_5 0 0 -1 0.24371606621965125
+  translation -5 -0.7 0
+  name "door(1)"
+  position -0.24371606621965114
+}
+Door {
+  hidden translation_5 -0.002734071141927169 -0.0011874806292999085 1.1324274851176597e-14
+  hidden rotation_5 0 0 1 0.007871000408856616
+  translation 4 5.2 0
+  rotation 0 0 1 -1.5707996938995747
+  name "door(2)"
+  position 0.007871000408844938
+}
+Door {
+  hidden translation_5 -0.0033032552057610798 -0.0013713353867658151 9.547918011776346e-15
+  hidden rotation_5 0 0 1 0.00907251878270056
+  translation 4 -5.2 0
+  rotation 0 0 1 -1.5707996938995747
+  name "door(3)"
+  position 0.009072518782714156
+}
+DrinkingFountain {
+  translation 0.1 4.8 0
+  rotation 0 0 1 -1.5707996938995747
+}
+Panel {
+  translation -0.9 3.2 0
+  rotation 0 0 1 1.5707996938995747
+  size 0.02 0.7 1.5
+  borderHeight 0.04
+  internalWidth 0
+  panelsCount 1
+  appearance VarnishedPine {
+    colorOverride 0.631373 0.686275 1
+    textureTransform TextureTransform {
+      scale 5 5
+    }
+  }
+  borderAppearance BrushedAluminium {
+    colorOverride 1 0 0.498039
+  }
+}
+Panel {
+  translation 0 3.2 0
+  rotation 0 0 1 1.5707996938995747
+  name "panel(4)"
+  size 0.02 0.7 1.5
+  borderHeight 0.04
+  internalWidth 0
+  panelsCount 1
+  appearance VarnishedPine {
+    colorOverride 0.631373 0.686275 1
+    textureTransform TextureTransform {
+      scale 5 5
+    }
+  }
+  borderAppearance BrushedAluminium {
+    colorOverride 1 0 0.498039
+  }
+}
+Panel {
+  translation 1 3.2 0
+  rotation 0 0 1 1.5707996938995747
+  name "panel(3)"
+  size 0.02 0.7 1.5
+  borderHeight 0.04
+  internalWidth 0
+  panelsCount 1
+  appearance VarnishedPine {
+    colorOverride 0.631373 0.686275 1
+    textureTransform TextureTransform {
+      scale 5 5
+    }
+  }
+  borderAppearance BrushedAluminium {
+    colorOverride 1 0 0.498039
+  }
+}
+Panel {
+  translation 2 -2.3 0
+  rotation 0 0 1 1.5707996938995747
+  name "panel(2)"
+  size 0.02 0.7 1.5
+  borderHeight 0.04
+  internalWidth 0
+  panelsCount 1
+  appearance VarnishedPine {
+    colorOverride 0.631373 0.686275 1
+    textureTransform TextureTransform {
+      scale 5 5
+    }
+  }
+  borderAppearance BrushedAluminium {
+    colorOverride 1 0 0.498039
+  }
+}
+Panel {
+  translation -1 -2.5 0
+  rotation 0 0 1 1.5707996938995747
+  name "panel(1)"
+  size 0.02 0.7 1.5
+  borderHeight 0.04
+  internalWidth 0
+  panelsCount 1
+  appearance VarnishedPine {
+    colorOverride 0.631373 0.686275 1
+    textureTransform TextureTransform {
+      scale 5 5
+    }
+  }
+  borderAppearance BrushedAluminium {
+    colorOverride 1 0 0.498039
+  }
+}
+PhotoFrame {
+  translation -2.5 4 0.8
+  rotation 0 0 1 3.0106996938995745
+}
+Carpet {
+  translation -1 -3.9 0
+}
+Chair {
+  translation 4.5 1.2 0
+  rotation 0 0 1 3.141592653589793
+  name "chair(2)"
+}
+Chair {
+  translation 4.5 2 0
+  rotation 0 0 1 3.141592653589793
+  name "chair(2)"
+}
+Chair {
+  translation 1.9 4.6 0
+  rotation 0 0 1 -1.5707950010791611
+  name "chair(2)"
+}
+Chair {
+  translation 2.8 4.6 0
+  rotation 0 0 1 -1.5707950010791611
+  name "chair(2)"
+}
+BunchOfSunFlowers {
+  translation -4 -4.5 0
+}
+BunchOfSunFlowers {
+  translation -4 -4 0
+  name "bunch of sunflowers(1)"
+}
+Chair {
+  translation 3.4 -4.7 0
+  rotation 0 0 1 1.5708003061004252
+  name "chair(2)"
+}
+Chair {
+  translation 2.5 -4.7 0
+  rotation 0 0 1 1.5708003061004252
+  name "chair(2)"
+}
+SimpleChair {
+  translation -2.9999999439142466 -3.6000000009063298 -0.00024226876820898635
+  rotation -0.0001317104819788995 -0.10894812539274826 -0.9940474277547098 0.0024323342365980614
+}
+SimpleChair {
+  translation 0.9002575121777924 -4.660010122314568 -0.00024226876821109578
+  rotation 0.00013249919205501453 -3.094132163159017e-05 0.9999999907432994 2.6827731704912994
+  name "simple chair(1)"
+}
+SimpleChair {
+  translation 1.0999999972352787 -3.5000000001195533 -0.00024226876820909737
+  rotation 0.00013249919182882453 2.330383926856641e-05 0.9999999909504477 -2.793395614025739
+  name "simple chair(2)"
+}
+SimpleChair {
+  translation -2.999999630014309 -4.600005914298729 -0.00024226876820898635
+  rotation -0.0001193300499099762 -0.4346288883339095 -0.9006096352948757 0.0006097118368322234
+  name "simple chair(3)"
+}
+Table {
+  translation -1 -4 0
+  rotation 0 0 1 1.5707996938995747
+}
+Chair {
+  translation -4 -3 0
+}
+Chair {
+  translation -4 -2 0
+  name "chair(1)"
+}
+Chair {
+  translation -4 1 0
+  name "chair(2)"
+}
+Chair {
+  translation -4 0 0
+  name "chair(3)"
+}
+OfficeChair {
+  hidden position_0_0 -4.553896943093605e-06
+  hidden rotation_1 0 0 -0.9999999999999999 0.08731234831763265
+  translation -4.00005770861897 4.000025367155799 -0.0007076030593641813
+  rotation -0.0004651106900028824 -0.0012683521562753333 -0.9999990874770105 0.5228448568109684
+}
+DesktopComputer {
+  translation -3.099999881128287 2.899999092825982 0.7093038015222202
+  rotation -0.00021576186309292474 -2.8265985834251968e-05 -0.9999999763239259 0.608670472258094
+  name "UNH"
+  mass 1
+}
+Desk {
+  translation -2.3 4.2 0
+  rotation 0 0 1 -0.3926996938995747
+  name "desk(2)"
+}
+Desk {
+  translation -4 2.2 0
+  rotation 0 0 1 -1.1780996938995747
+  name "desk(1)"
+}
+Desk {
+  translation -3 3 0
+  rotation 0 0 1 -0.6544996938995746
+}
+Keyboard {
+  translation -2.999999557462784 3.2999993146112976 0.7148038000000002
+  rotation -0.00015742004609032006 -9.684295607935434e-05 -0.9999999829201852 0.4676586637299258
+  mass 1
+}
+Monitor {
+  translation -2.8 3.19926 0.710296
+  rotation 0.00031369538756221844 -9.33098539135563e-06 0.999999950754067 2.7505703061004256
+}
+Chair {
+  translation 4.5 -2.3 0
+  rotation 0 0 1 3.141592653589793
+  name "chair(2)"
+}
+Chair {
+  translation 4.5 -3 0
+  rotation 0 0 1 3.141592653589793
+  name "chair(2)"
+}

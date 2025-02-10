@@ -1,0 +1,125 @@
+*{
+    font-family: sans-serif;
+}
+body{
+    background-color: black;
+    color: #fff;
+    margin: 0;
+    align-items: center;
+}
+.header{
+    margin: auto;
+    text-align: center;
+    padding-top: 20px;
+    border-bottom: solid 1px rgba(0, 255, 0, 0.363);
+}
+.anime{
+    color: rgba(72, 72, 72, 0.42);
+    animation: jeux-led 3s alternate-reverse infinite;
+    font-size: xx-large;
+}
+@keyframes jeux-led {
+    0% {
+        color: rgb(255, 255, 255);
+        text-shadow: 0 0 7px rgb(30, 255, 0);
+    }
+    90% {
+        color: rgba(72, 72, 72, 0.31);
+        text-shadow: none;
+    }
+    100% {
+        color:rgb(45, 116, 57);
+        text-shadow: 0 0 7px rgb(0, 255, 98);
+    }
+}
+.anime:nth-child(1){
+    animation-delay: 0.1s;
+}
+.anime:nth-child(2){
+    animation-delay: 0.2s;
+}
+.anime:nth-child(3){
+    animation-delay: 0.3s;
+}
+.anime:nth-child(4){
+    animation-delay: 0.4s;
+}
+.anime:nth-child(5){
+    animation-delay: 0.5s;
+}
+.anime:nth-child(6){
+    animation-delay: 0.6s;
+}
+.anime:nth-child(7){
+    animation-delay: 0.7s;
+}
+.anime:nth-child(8){
+    animation-delay: 0.8s;
+}
+.anime:nth-child(9){
+    animation-delay: 1s;
+}
+a{
+    color: green;
+    text-decoration: none;
+}
+a:hover{
+    color: orange;
+    text-decoration: underline;
+}
+/*
+a:active{
+    color: yellow;
+}
+a:visited{
+    color: blue;
+}
+*/
+#ztexte{
+    background-color: #ddd;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+}
+#ztexte:focus{
+    background-color: chartreuse;
+    border: none;
+    color: #ffffff;
+}
+section>article:nth-child(2){
+    color: blue;
+}
+.text{
+    font-size: 18pt;
+}
+.text:first-line{
+    color: rgb(0, 0, 0);
+    background-color: #fff;
+}
+.text::first-letter{
+    font-size: 46pt;
+    color: rgb(136, 255, 0);
+}
+#citation::before{
+    content: '"';
+    color: orange;
+}
+#citation::after{
+    content: '"';
+    color: orange;
+}
+ul{
+    list-style-type: square;
+    list-style-position: inside;
+
+}
+#txt1{
+    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.315);
+    color: black;
+    width: 400px;
+    height: 160px;
+    border: 1px solid #ff0000;
+    overflow: auto;
+    margin: auto;
+}

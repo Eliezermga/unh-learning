@@ -1,0 +1,17 @@
+gym 
+pygame 
+numpy 
+imageio 
+imageio_ffmpeg
+tqdm
+IPython
+tensorflow
+keras-rl
+torch
+opencv-python
+nltk
+textblob
+gensim
+stanfordnlp
+openai
+transformers

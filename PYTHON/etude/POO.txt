@@ -1,0 +1,24 @@
+--------------------------------------------------------------
+La programmation oririenté-objet (POO) avec le langage Python
+--------------------------------------------------------------
+
+Classe              : PLan de conception, genre (ex : Humain)
+Objet               : instance de classe (ex : Josué)
+
+Attribut            : variable de classe (ex : prenom, age, saxe, taille, ...)
+Propriété           : manière de manipuler les attributs (lecture seule, accès non autorisé en dehors de la classe, etc.)
+
+Méthode             : fonction d'une classe (ex : manger, parler, marcher, dormir)
+Méthode de classe   : fonction d'une classe
+Méthode statique    : fonction d'une classe, mais indépendante de celle-ci.
+
+Héritage            : classe Fille qui hérite d'une classe Mère (Fille est une sorte de Mère)
+                    : classe Chat hérite de la classe Animal (Chat est une sorte d'Animal)
+
+pour creer une classe pn utilise le mot clé "class" UnHumain
+
+methode d'instance: fonction sur une instance(objet)
+
+"""import player
+#si le module à importer n'est pas dans le même dossier qu'avec le fichier principle chemin.nomfichier et ajouter "as" 
+player.au_revoir()"""
