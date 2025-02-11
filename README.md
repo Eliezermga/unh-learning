@@ -5,8 +5,7 @@ This repository contains a collection of courses, projects, and exercises comple
 ## Repository Structure
 
 - `.vscode/` - Configuration files for Visual Studio Code, including workspace settings and extensions.
-- `PYTHON/` - Python scripts, exercises, and projects covering various topics like algorithms, data structures, and automation.
-- `basic/` - Contains fundamental programming examples, beginner exercises, and introductory scripts.
+- `PYTHON/` - Python scripts, exercises, and projects covering various topics like algorithms, data structures, and automation
 - `c/` - C language programs demonstrating concepts such as memory management, pointers, and data structures.
 - `java/` - Java projects and exercises, including object-oriented programming (OOP) examples and application development.
 - `js/` - JavaScript scripts and projects for web development, front-end applications, and scripting.
