@@ -1,0 +1,9 @@
+Flask
+requests
+numpy
+scikit-learn
+pandas
+matplotlib
+dht
+bmp180
+umqtt.simple

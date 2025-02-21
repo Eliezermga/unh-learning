@@ -1,0 +1,24 @@
+body {
+    background: linear-gradient(to right, #4facfe, #00f2fe);
+    color: white;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.card {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border: none;
+    padding: 20px;
+    border-radius: 15px;
+}
+
+h1, h2 {
+    margin: 20px 0;
+}
+
+#prediction {
+    font-size: 1.5em;
+    margin-top: 20px;
+    color: #ffcc00;
+}
